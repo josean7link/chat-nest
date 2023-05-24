@@ -22,6 +22,8 @@ export class Gateway
 
   handleConnection(client: any, ...args: any[]) {
     console.log('Hola alguien se conecto al socket 👌👌👌');
+    const jwtToken = client.handshake.headers.authorization.replace('Bearer ', '');
+    console.log(jwtToken)
   }
 
   handleDisconnect(client: any) {
